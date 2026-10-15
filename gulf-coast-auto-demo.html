@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gulf Coast Auto Repair — Auto Repair & Car Rental | North Fort Myers, FL</title>
+<meta name="description" content="Gulf Coast Auto Repair — honest auto repair plus affordable car rentals in North Fort Myers, FL. Call (239) 234-3506.">
+<style>
+  :root{
+    --deep:#0E2A2E;        /* teal-tinted black */
+    --deep-2:#123338;
+    --teal:#2A6E74;        /* 30% */
+    --teal-deep:#1E565B;
+    --sand:#F3EAD9;        /* 60% light */
+    --sand-2:#EADFC8;
+    --coral:#C2714B;       /* 10% accent, muted */
+    --coral-deep:#A85A38;
+    --text:#F5EFE3;        /* off-white */
+    --text-dark:#2E3A38;
+    --muted:#A9C0BC;
+    --muted-dark:#5F726E;
+    --sans:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    --serif:Georgia,'Times New Roman',serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--sand);color:var(--text-dark);overflow-x:hidden;line-height:1.65;-webkit-text-size-adjust:100%}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+  /* ---------- NAV ---------- */
+  nav{position:sticky;top:0;z-index:50;background:rgba(14,42,46,.95);backdrop-filter:blur(8px)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+  .brand{font-family:var(--serif);font-size:1.12rem;color:var(--text);text-decoration:none;font-style:italic}
+  .brand b{font-style:normal;color:var(--coral)}
+  .nav-links{display:none;gap:26px}
+  .nav-links a{text-decoration:none;font-size:.86rem;font-weight:600;color:var(--muted)}
+  .nav-links a:hover{color:var(--text)}
+  .nav-cta{display:inline-block;background:var(--coral);color:#fff;text-decoration:none;font-weight:800;font-size:.85rem;padding:11px 24px;border-radius:999px;white-space:nowrap}
+  .nav-cta:hover{background:var(--coral-deep)}
+  @media(min-width:760px){.nav-links{display:flex}}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;background:linear-gradient(180deg,#0B2225 0%,var(--deep) 55%,var(--teal-deep) 130%);color:var(--text);padding:100px 0 0;overflow:hidden}
+  .sun{position:absolute;top:56px;right:-70px;width:280px;height:280px;border-radius:50%;
+    background:radial-gradient(circle,rgba(194,113,75,.85) 0%,rgba(194,113,75,.28) 45%,transparent 70%);pointer-events:none}
+  .palms{position:absolute;bottom:0;left:0;right:0;opacity:.16;pointer-events:none}
+  .hero .wrap{position:relative;text-align:center;padding-bottom:30px}
+  .hero .eyebrow{font-size:.78rem;letter-spacing:.3em;text-transform:uppercase;color:var(--coral);font-weight:800;margin-bottom:18px}
+  .hero h1{font-family:var(--serif);font-style:italic;font-size:clamp(2.5rem,9vw,4.8rem);line-height:1.02;letter-spacing:-.01em}
+  .hero h1 span{color:var(--coral);font-style:normal;font-weight:700}
+  .hero p.lede{color:var(--muted);font-size:1.08rem;max-width:600px;margin:22px auto 38px}
+  .btn-row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+  .btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-weight:800;font-size:.95rem;padding:17px 34px;border-radius:999px;min-height:56px}
+  .btn-solid{background:var(--coral);color:#fff}
+  .btn-solid:hover{background:var(--coral-deep)}
+  .btn-line{border:1.5px solid rgba(245,239,227,.5);color:var(--text)}
+  .btn-line:hover{border-color:var(--text)}
+  .dual-badges{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:44px;position:relative;z-index:2}
+  .dual-badges div{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:16px 26px;font-size:.9rem;font-weight:700}
+  .dual-badges div small{display:block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .wave{display:block;width:100%;height:64px;margin-top:26px}
+  @media(min-width:700px){.wave{height:100px}}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:70px 0}
+  .eyebrow{font-size:.76rem;letter-spacing:.3em;text-transform:uppercase;color:var(--coral-deep);font-weight:800;margin-bottom:14px}
+  h2{font-family:var(--serif);font-size:clamp(1.9rem,5.5vw,2.9rem);line-height:1.1;letter-spacing:-.01em;margin-bottom:14px}
+  .sec-sub{color:var(--muted-dark);max-width:620px;margin-bottom:40px}
+
+  /* split services: repair + rental */
+  .split{display:grid;gap:22px;grid-template-columns:1fr}
+  @media(min-width:860px){.split{grid-template-columns:1fr 1fr}}
+  .panel{border-radius:26px;padding:40px 32px;position:relative;overflow:hidden}
+  .panel.repair{background:#fff;border:1px solid var(--sand-2)}
+  .panel.rental{background:linear-gradient(150deg,var(--deep),var(--teal-deep));color:var(--text)}
+  .panel .tag{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;border-radius:999px;padding:8px 18px;margin-bottom:20px}
+  .repair .tag{background:rgba(42,110,116,.12);color:var(--teal-deep)}
+  .rental .tag{background:rgba(194,113,75,.2);color:var(--coral)}
+  .panel h3{font-family:var(--serif);font-size:1.7rem;margin-bottom:18px}
+  .rental h3{color:var(--text)}
+  .svc-item{display:flex;gap:14px;padding:14px 0;border-bottom:1px dashed rgba(0,0,0,.12);align-items:flex-start}
+  .rental .svc-item{border-bottom-color:rgba(255,255,255,.14)}
+  .svc-item:last-child{border-bottom:none}
+  .svc-item svg{flex:none;width:26px;height:26px;stroke:var(--teal-deep);fill:none;stroke-width:1.9;margin-top:2px}
+  .rental .svc-item svg{stroke:var(--coral)}
+  .svc-item b{display:block;font-size:1rem}
+  .svc-item p{font-size:.9rem;color:var(--muted-dark)}
+  .rental .svc-item p{color:var(--muted)}
+  .panel .btn{margin-top:22px}
+
+  /* why: sand band with wave top */
+  .why-band{background:var(--sand-2);border-radius:30px;padding:54px 32px}
+  .why-list{display:grid;gap:20px;grid-template-columns:1fr;margin-top:8px}
+  @media(min-width:760px){.why-list{grid-template-columns:1fr 1fr}}
+  .why-item{background:var(--sand);border-radius:18px;padding:26px}
+  .why-item h3{font-size:1.05rem;margin-bottom:6px}
+  .why-item h3::before{content:"◆ ";color:var(--coral);font-size:.8em}
+  .why-item p{font-size:.94rem;color:var(--muted-dark)}
+
+  /* area */
+  .area-strip{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+  .area-strip span{background:#fff;border:1px solid var(--sand-2);padding:10px 20px;border-radius:999px;font-size:.88rem;font-weight:600}
+
+  /* contact */
+  .contact{background:linear-gradient(160deg,var(--deep),#0B2225);color:var(--text);border-radius:30px;padding:64px 32px;text-align:center;position:relative;overflow:hidden}
+  .contact .eyebrow{color:var(--coral)}
+  .contact h2{color:var(--text)}
+  .contact p{color:var(--muted);max-width:540px;margin:0 auto 32px}
+  .big-phone{display:inline-block;font-size:clamp(1.6rem,6.5vw,2.6rem);font-weight:800;color:var(--coral);text-decoration:none;margin-bottom:10px}
+  .big-phone:hover{color:#D6855F}
+  .mail-line{display:block;color:var(--muted);text-decoration:none;margin-bottom:32px;word-break:break-all}
+  .mail-line:hover{color:var(--text)}
+
+  footer{background:#0B2225;color:var(--muted);padding:36px 0;font-size:.86rem}
+  footer .wrap{display:flex;flex-direction:column;gap:8px;align-items:center;text-align:center}
+  footer a{color:var(--text);text-decoration:none}
+  .demo-note{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#5E7A76}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">Gulf Coast <b>Auto</b></a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#area">Area</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="nav-cta" href="tel:+12392343506">Call Now</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="sun"></div>
+  <svg class="palms" viewBox="0 0 1440 120" preserveAspectRatio="none" style="height:120px"><path d="M0,120 Q240,40 480,90 T960,70 T1440,100 L1440,120 Z" fill="#000"/></svg>
+  <div class="wrap">
+    <p class="eyebrow">North Fort Myers · Florida</p>
+    <h1>Fixed Right.<br><span>Rented Easy.</span></h1>
+    <p class="lede">Gulf Coast Auto Repair keeps your car running — and if you need wheels while yours is in the shop, rent one from us. Repair and rental, one friendly local stop.</p>
+    <div class="btn-row">
+      <a class="btn btn-solid" href="tel:+12392343506">Call (239) 234-3506</a>
+      <a class="btn btn-line" href="mailto:Luna.autocare@gmail.com?subject=Rental%20or%20repair%20inquiry">Email Us</a>
+    </div>
+    <div class="dual-badges">
+      <div><small>Auto Repair</small>Honest work, fair prices</div>
+      <div><small>Car Rental</small>Daily &amp; weekly rates</div>
+    </div>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 100" preserveAspectRatio="none"><path d="M0,60 C240,110 480,10 720,50 C960,90 1200,20 1440,60 L1440,100 L0,100 Z" fill="#F3EAD9"/></svg>
+</header>
+
+<section id="services" style="padding-top:44px">
+  <div class="wrap">
+    <p class="eyebrow">What We Do</p>
+    <h2>Two Ways We Keep You Moving</h2>
+    <p class="sec-sub">Full-service auto repair for the car you own — and easy rentals for whenever you need a second set of wheels.</p>
+    <div class="split">
+      <div class="panel repair">
+        <span class="tag">Auto Repair</span>
+        <h3>Repairs You Can Trust</h3>
+        <div class="svc-item"><svg viewBox="0 0 24 24"><path d="M12 8v4l2.5 2.5"/><circle cx="12" cy="12" r="9"/></svg><div><b>Diagnostics &amp; Engine Work</b><p>Check-engine light? Strange noise? We find the real problem and explain it plainly before any work starts.</p></div></div>
+        <div class="svc-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></svg><div><b>Brakes</b><p>Pads, rotors, calipers — safe, quiet stopping power for Florida's stop-and-go traffic.</p></div></div>
+        <div class="svc-item"><svg viewBox="0 0 24 24"><path d="M12 3v10M12 17.5v.5M5 6l14 12M19 6L5 18"/></svg><div><b>A/C Repair</b><p>Ice-cold air conditioning is non-negotiable in SWFL. Recharge, leak repair, compressor service.</p></div></div>
+        <div class="svc-item"><svg viewBox="0 0 24 24"><path d="M7 17a4 4 0 118 0M5 17h14M6 17l2-7h8l2 7"/></svg><div><b>Oil, Tires &amp; Maintenance</b><p>Oil changes, tire rotation, alignments, and scheduled maintenance to keep small issues small.</p></div></div>
+        <a class="btn btn-solid" href="tel:+12392343506">Book a Repair</a>
+      </div>
+      <div class="panel rental">
+        <span class="tag">Car Rental</span>
+        <h3>Rent a Car in SWFL</h3>
+        <div class="svc-item"><svg viewBox="0 0 24 24"><path d="M3 16V8a1 1 0 011-1h13v9M16 10h3l3 3v3h-2"/><circle cx="7" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/></svg><div><b>Daily &amp; Weekly Rentals</b><p>Affordable rates whether you need a car for a day or a few weeks.</p></div></div>
+        <div class="svc-item"><svg viewBox="0 0 24 24"><path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div><b>While Yours Is in the Shop</b><p>Getting repairs done? Roll straight into a rental — no rides, no waiting.</p></div></div>
+        <div class="svc-item"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><div><b>Simple &amp; Local</b><p>No airport counters, no fine-print maze. Straightforward local rental from people you can talk to.</p></div></div>
+        <a class="btn btn-solid" href="tel:+12392343506">Reserve a Car</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why" style="padding-top:20px">
+  <div class="wrap">
+    <div class="why-band">
+      <p class="eyebrow">Why Gulf Coast</p>
+      <h2>The Shop That Treats You Like a Neighbor</h2>
+      <div class="why-list">
+        <div class="why-item"><h3>Straight Answers</h3><p>We show you what's wrong, explain your options, and never push work you don't need.</p></div>
+        <div class="why-item"><h3>Repair + Rental Under One Roof</h3><p>Car in the shop? You're not stranded — grab a rental on the spot and keep your day moving.</p></div>
+        <div class="why-item"><h3>Fair SWFL Pricing</h3><p>Honest local rates, written estimates before we start, and no surprise line items.</p></div>
+        <div class="why-item"><h3>Fast Turnaround</h3><p>Most maintenance and common repairs done same-day or next-day. We respect your schedule.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="area" style="padding-top:56px">
+  <div class="wrap">
+    <p class="eyebrow">Service Area</p>
+    <h2>Serving North Fort Myers &amp; SWFL</h2>
+    <p class="sec-sub">Drive in for repairs or pick up your rental — easy to reach from across the area.</p>
+    <div class="area-strip">
+      <span>North Fort Myers</span><span>Fort Myers</span><span>Cape Coral</span><span>Lehigh Acres</span><span>Estero</span><span>Bonita Springs</span>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="padding-top:24px">
+  <div class="wrap">
+    <div class="contact">
+      <p class="eyebrow">Get In Touch</p>
+      <h2>Need a Repair or a Rental?</h2>
+      <p>Call or message us — tell us what your car needs or when you need a rental, and we'll take care of the rest.</p>
+      <a class="big-phone" href="tel:+12392343506">(239) 234-3506</a>
+      <a class="mail-line" href="mailto:Luna.autocare@gmail.com?subject=Rental%20or%20repair%20inquiry">Luna.autocare@gmail.com</a>
+      <div class="btn-row">
+        <a class="btn btn-solid" href="tel:+12392343506">Call Now</a>
+        <a class="btn btn-line" href="https://www.facebook.com/61577346700729/" target="_blank" rel="noopener">Facebook Page</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>Gulf Coast Auto Repair · North Fort Myers, FL · <a href="tel:+12392343506">(239) 234-3506</a></div>
+    <div class="demo-note">Demo website concept by Wahab Codes</div>
+  </div>
+</footer>
+
+</body>
+</html>
